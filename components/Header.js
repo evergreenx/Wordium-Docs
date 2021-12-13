@@ -1,5 +1,6 @@
 import React from "react";
 
+          <Icon name={"menu"} size={"2xl"} />
 import Icon from "@material-tailwind/react/Icon";
 import Button from "@material-tailwind/react/Button";
 // import Input from "@material-tailwind/react/Input";

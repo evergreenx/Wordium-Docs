@@ -1,16 +1,19 @@
 import "../styles/globals.css";
 import "@material-tailwind/react/tailwind.css";
 import Head from "next/head";
-function MyApp({ Component, pageProps }) {
+import { SessionProvider } from "next-auth/react";
+function MyApp({ Component, pageProps :{ session, ...pageProps } }) {
   return (
     <>
-      <Head>
-        <link
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet"
-        />
-      </Head>
-      <Component {...pageProps} />
+      <SessionProvider session={session}>
+        <Head>
+          <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+          />
+        </Head>
+        <Component {...pageProps} />
+      </SessionProvider>
     </>
   );
 }
