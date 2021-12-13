@@ -3,12 +3,15 @@ import AddDoc from "../components/AddDoc";
 import ExisitingDocs from "../components/ExisitingDocs";
 import Header from "../components/Header";
 // import getsession and usesession
-import { useSession, getSession } from "next-auth/react";
+import { useSession, getSession } from "next-auth/client";
 
 import Login from "../components/Login";
 
 export default function Home() {
-  const { session, status } = useSession();
+
+  // const { session, status } = useSession();
+   const [session ] = useSession()
+
 
   if (!session) {
     return <Login />;

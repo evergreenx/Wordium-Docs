@@ -7,10 +7,10 @@
   },
   "dependencies": {
     "@material-tailwind/react": "0.3.4",
-    "@next-auth/firebase-adapter": "^0.1.3",
-    "firebase": "^9.6.1",
+    "@next-auth/firebase-adapter": "0.0.2-canary.207",
+    "firebase": "^8.2.3",
     "next": "latest",
-    "next-auth": "^4.0.5",
+    "next-auth": "^3.29.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
