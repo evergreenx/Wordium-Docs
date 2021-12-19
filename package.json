@@ -6,7 +6,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
     "@material-tailwind/react": "0.3.4",
+    "@mui/material": "^5.2.4",
     "@next-auth/firebase-adapter": "0.0.2-canary.207",
     "firebase": "^8.2.3",
     "next": "latest",

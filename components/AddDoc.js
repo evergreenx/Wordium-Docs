@@ -2,8 +2,32 @@ import React from "react";
 import Button from "@material-tailwind/react/Button";
 import Icon from "@material-tailwind/react/Icon";
 import Image from "next/image";
+import Box from "@mui/material/Box";
+
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+import Input from "@material-tailwind/react/Input";
+// import Button from "@material-tailwind/react/Button";
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: 0,
+  boxShadow: 24,
+  borderRadius: 6,
+  p: 4,
+};
 
 export default function AddDoc() {
+  const [showModal, setShowModal] = React.useState(false);
+
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <>
       <div className="py-6 flex items-center justify-between">
@@ -50,11 +74,42 @@ export default function AddDoc() {
 
       <div>
         <div className="relative h-52 w-40 border-2 border-slate-100 cursor-pointer hover:border-blue-700">
-          <Image src="https://links.papareact.com/pju" layout="fill" />
+          <Image
+            src="https://links.papareact.com/pju"
+            layout="fill"
+            onClick={handleOpen}
+          />
         </div>
 
         <p className="text-sm ml-2 font-semibold  mt-2 text-gray-700">Blank</p>
       </div>
+
+  
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Input
+            type="text"
+            color="lightBlue"
+            size="lg"
+            outline={true}
+            placeholder="Enter Document Name"
+          />
+
+          <div className="mt-10 flex ">
+            <Button sx={{ mx: 6 }} className="mr-6" onClick={handleClose}>
+              Cancel{" "}
+            </Button>
+            <Button sx={{ mt: 6 }} onClick={handleOpen}>
+              Create{" "}
+            </Button>
+          </div>
+        </Box>
+      </Modal>
     </>
   );
 }

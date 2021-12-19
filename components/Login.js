@@ -6,14 +6,11 @@ import Button from "@material-tailwind/react/Button";
 import Icon from "@material-tailwind/react/Icon";
 
 export default function Login() {
-
-
-    const handleSignIn = ()  =>{
-
-        signIn();
-    }
+  const handleSignIn = () => {
+    signIn();
+  };
   return (
-    <div className="mx-auto w-full flex flex-col">
+    <div className="mx-auto w-full justify-center items-center flex flex-col ">
       <Image
         src={"https://links.papareact.com/1ui"}
         width={"300"}
@@ -31,6 +28,7 @@ export default function Login() {
         ripple="dark"
         className="border-0"
         onClick={handleSignIn}
+        className="border-0 border-blue-500 w-32"
       >
         <h2
           className=" text-smbb
