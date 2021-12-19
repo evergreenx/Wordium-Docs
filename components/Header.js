@@ -1,11 +1,21 @@
 import React from "react";
 
-          <Icon name={"menu"} size={"2xl"} />
+<Icon name={"menu"} size={"2xl"} />;
 import Icon from "@material-tailwind/react/Icon";
 import Button from "@material-tailwind/react/Button";
+import { getProviders, providers } from "next-auth/client"
 // import Input from "@material-tailwind/react/Input";
 
+// next auth session
+import { signIn } from "next-auth/client";
+import { useSession } from "next-auth/client"
+
+
+
 export default function Header() {
+  const [session, loading] = useSession()
+
+  console.log(session , 'from header')
   return (
     <div className="flex sticky top-0 z-50 px-4 py-2 justify-between items-center shadow-md bg-white">
       <div className="flex items-center">
@@ -60,7 +70,7 @@ export default function Header() {
         <img
           loading="lazy"
           class="inline cursor-pointer object-cover w-10 h-10  rounded-full"
-          src="https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+          src={session?.user?.image}
           alt="Profile image"
         />
       </div>
