@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "@material-tailwind/react/Button";
 import Icon from "@material-tailwind/react/Icon";
 import Image from "next/image";
 import Box from "@mui/material/Box";
+import firebase from "firebase";
+import {useCollectionOnce } from 'react-firebase-hooks/firestore';
 
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Input from "@material-tailwind/react/Input";
+import { db } from "../firebase";
+import { useSession } from "next-auth/client";
 // import Button from "@material-tailwind/react/Button";
 const style = {
   position: "absolute",
@@ -17,16 +21,71 @@ const style = {
   bgcolor: "background.paper",
   border: 0,
   boxShadow: 24,
-  borderRadius: 6,
+  borderRadius: 4,
   p: 4,
 };
 
 export default function AddDoc() {
-  const [showModal, setShowModal] = React.useState(false);
-
   const [open, setOpen] = React.useState(false);
+  const [docName, setDocName] = useState("");
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const [session, loading] = useSession();
+
+  // const [snapshot] = useCollectionOnce(db.collection('userDocs').doc(session.user.email).collection('docs').orderBy('timestamp', 'desc'));
+
+  const createDocument = () => {
+    if (!docName) {
+      return;
+    }
+    // alert(docName);
+
+    db.collection("userDocs").doc(session.user.email).collection("docs").add({
+      filename: docName,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
+
+    setDocName("");
+    handleClose();
+  };
+
+  const modal = (
+    <Modal
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="modal-modal-title"
+      aria-describedby="modal-modal-description"
+    >
+      <Box sx={style}>
+        <Input
+          type="text"
+          color="lightBlue"
+          size="lg"
+          outline={false}
+          placeholder="Document Name"
+          onChange={(e) => setDocName(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") createDocument();
+          }}
+        />
+
+        <div className="mt-10 flex ">
+          <Button
+            sx={{ mx: 6 }}
+            className="mr-6"
+            buttonType="outline"
+            onClick={handleClose}
+          >
+            Cancel{" "}
+          </Button>
+          <Button sx={{ mt: 6 }} onClick={createDocument}>
+            Create{" "}
+          </Button>
+        </div>
+      </Box>
+    </Modal>
+  );
 
   return (
     <>
@@ -84,32 +143,7 @@ export default function AddDoc() {
         <p className="text-sm ml-2 font-semibold  mt-2 text-gray-700">Blank</p>
       </div>
 
-  
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <Input
-            type="text"
-            color="lightBlue"
-            size="lg"
-            outline={true}
-            placeholder="Enter Document Name"
-          />
-
-          <div className="mt-10 flex ">
-            <Button sx={{ mx: 6 }} className="mr-6" onClick={handleClose}>
-              Cancel{" "}
-            </Button>
-            <Button sx={{ mt: 6 }} onClick={handleOpen}>
-              Create{" "}
-            </Button>
-          </div>
-        </Box>
-      </Modal>
+      {modal}
     </>
   );
 }

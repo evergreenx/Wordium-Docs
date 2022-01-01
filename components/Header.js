@@ -50,7 +50,7 @@ export default function Header() {
           <h2 className="text-2xl text-gray-500 mr-5 ml-5 md:mr-16">Docs</h2>
         </div>
 
-        <div class="searchbar w-1/3  invisible md:visible  self-center   h-12 flex items-center  px-4 py-5 mx-5 md:mx-20 bg-gray-100 rounded-lg focus-within:bg-white focus-within:border-1 focus-within:shadow-md focus-within:text-gray-600">
+        <div className="searchbar w-1/3  invisible md:visible  self-center   h-12 flex items-center  px-4 py-5 mx-5 md:mx-20 bg-gray-100 rounded-lg focus-within:bg-white focus-within:border-1 focus-within:shadow-md focus-within:text-gray-600">
           <Button
             color="gray"
             buttonType="outline"
@@ -69,7 +69,7 @@ export default function Header() {
           />
         </div>
 
-        <div class="user-area flex items-center ">
+        <div className="user-area flex items-center ">
           <Button
             color="gray"
             buttonType="outline"
@@ -84,7 +84,7 @@ export default function Header() {
 
           <img
             loading="lazy"
-            class="inline cursor-pointer object-cover w-8 h-8  rounded-full"
+            className="inline cursor-pointer object-cover w-8 h-8  rounded-full"
             src={session?.user?.image}
             alt="Profile image"
             id="basic-button"
