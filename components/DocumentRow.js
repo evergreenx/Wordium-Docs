@@ -4,8 +4,12 @@ import { useRouter } from "next/router";
 import Icon from "@material-tailwind/react/Icon";
 
 export default function DocumentRow({ id, filename, date }) {
+
+  const router  = useRouter();
   return (
-    <div className="flex items-center hover:bg-gray-100 text-gray-400 px-1 py-3 text-sm cursor-pointer rounded-xl">
+    <div
+    onClick={() => router.push(`/documents/${id}`)}
+    className="flex items-center hover:bg-gray-100 text-gray-400 px-1 py-3 text-sm cursor-pointer rounded-xl">
       <Icon
         className="text-green-500"
         color={"blue"}
