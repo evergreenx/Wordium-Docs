@@ -1,15 +1,17 @@
 import React from "react";
 import { useDocumentOnce } from "react-firebase-hooks/firestore";
 import { db } from "../../firebase";
-import { useSession } from "next-auth/client";
+import { useSession , getSession } from "next-auth/client";
 import Icon from "@material-tailwind/react/Icon";
 // import DocumentRow from "./DocumentRow";
 import Login from "../../components/Login";
 import { useRouter } from "next/dist/client/router";
+import { signOut } from "next-auth/client";
 
 import Button from "@material-tailwind/react/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import TextEditor from "../../components/TextEditor";
 
 export default function documents() {
   const [session] = useSession();
@@ -20,7 +22,6 @@ export default function documents() {
   const router = useRouter();
   const { id } = router.query;
 
- 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -31,6 +32,10 @@ export default function documents() {
     setAnchorEl(null);
   };
 
+  const handleSignOut = () => {
+    // handleClose()
+    signOut();
+  };
   const [snapshot, loadingSnapshot] = useDocumentOnce(
     db.collection("userDocs").doc(session.user.email).collection("docs").doc(id)
   );
@@ -100,7 +105,7 @@ export default function documents() {
             ripple="dark"
             className="border-0 ml-5 mr-5 md:ml-11 h-16"
           >
-            <Icon name={"apps"} size={"3xl"} />
+            <Icon name={"chat"} size={"3xl"} />
           </Button>
 
           <img
@@ -130,6 +135,17 @@ export default function documents() {
           </div>
         </div>
       </header>
+
+      <TextEditor />
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+  return {
+    props: {
+      session,
+    },
+  };
 }
