@@ -2,15 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+.searchInput::-webkit-search-cancel-button {
+  position: relative;
+  right: 20px;
+  width: 100px;
+  background-color: black;
 
-.searchInput::-webkit-search-cancel-button{
-    position:relative;
-    right:20px;  
-    width: 100px;
-    background-color: black;
+  /* -webkit-appearance: none; */
+  height: 20px;
+  width: 20px;
+}
+.body {
+  background-color: red;
+  scrollbar-width: none;
+}
+::-webkit-scrollbar {
+  display: none;
+} 
 
-    /* -webkit-appearance: none; */
-    height: 20px;
-    width: 20px;
-
+.DraftEditor-root {
+  /* height: 480px !important; */
 }

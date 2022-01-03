@@ -8,6 +8,7 @@ import { useSession } from "next-auth/client";
 import { useRouter } from "next/router";
 import { useDocumentOnce } from "react-firebase-hooks/firestore";
 import { convertToRaw, convertFromRaw } from "draft-js";
+import TextEditorFooter from "./TextEditorFooter";
 const Editor = dynamic(
   () => import("react-draft-wysiwyg").then((mod) => mod.Editor),
   {
@@ -19,6 +20,9 @@ export default function TextEditor() {
   const [session] = useSession();
 
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
+
+  let count = editorState.length;
+  console.log(count);
 
   const router = useRouter();
 
@@ -58,13 +62,15 @@ export default function TextEditor() {
   };
 
   return (
-    <div className="bg-[#F8F9FA] min-h-screen pb-16">
+    <div className="bg-[#c6c6c7] min-h-screen pb-16 overflow-scroll">
       <Editor
         editorState={editorState}
         onEditorStateChange={onEditorStateChange}
         toolbarClassName="flex sticky top-0 z-50 !jusitfy-center mx-auto"
-        editorClassName="w-full mt-6 bg-white shadow-lg rounded-lg max-w-5xl mx-auto mb-12 p-10 "
+        editorClassName="w-full mt-6 bg-white shadow-lg rounded-lg max-w-4xl mx-auto mb-12 p-10 h-10"
       />
+
+      <TextEditorFooter state={editorState} />
     </div>
   );
 }
