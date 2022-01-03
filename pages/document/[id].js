@@ -54,14 +54,14 @@ export default function documents() {
         </span>
 
         <div className="flex-grow">
-          <h2 className="font-bold text-lg mx-20">
+          <h2 className="font-semibold text-lg mx-2">
             {snapshot?.data()?.filename}
           </h2>
           {/* <Icon name="star" size="1xl"  color={'grey'} />
           <Icon name="folderzip" size="1xl"  color={'grey'} />
           <Icon name="cloud" size="1xl"  color={'grey'} /> */}
 
-          <div className="flex-row flex items-center text-sm justify-around ">
+          <div className="flex-row flex items-center text-sm space-x-1 mx-1 ">
             <p className="hover:bg-gray-100 cursor-pointer py-1 rounded px-3">
               File
             </p>
