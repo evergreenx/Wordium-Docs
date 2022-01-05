@@ -1,7 +1,7 @@
 import React from "react";
 import { useDocumentOnce } from "react-firebase-hooks/firestore";
 import { db } from "../../firebase";
-import { useSession , getSession } from "next-auth/client";
+import { useSession, getSession } from "next-auth/client";
 import Icon from "@material-tailwind/react/Icon";
 // import DocumentRow from "./DocumentRow";
 import Login from "../../components/Login";
@@ -12,6 +12,7 @@ import Button from "@material-tailwind/react/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import TextEditor from "../../components/TextEditor";
+import Image from "next/image";
 
 export default function documents() {
   const [session] = useSession();
@@ -47,21 +48,7 @@ export default function documents() {
   console.log(snapshot, "two");
   return (
     <div>
-      <header className="flex justify-between items-center text-sm p-3">
-        <span onClick={() => router.push("/")} className="cursor-pointer">
-          <Icon name="article" size="4xl" color="blue" />
-          {/* <Image src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Google_Docs.max-1100x1100.png" /> */}
-        </span>
-
-        <div className="flex-grow">
-          <h2 className="font-semibold text-lg mx-2">
-            {snapshot?.data()?.filename}
-          </h2>
-          {/* <Icon name="star" size="1xl"  color={'grey'} />
-          <Icon name="folderzip" size="1xl"  color={'grey'} />
-          <Icon name="cloud" size="1xl"  color={'grey'} /> */}
-
-          <div className="flex-row flex items-center text-sm space-x-1 mx-1 ">
+         <div className="flex-row flex items-center text-xs space-x-1 mx-1 ">
             <p className="hover:bg-gray-100 cursor-pointer py-1 rounded px-3">
               File
             </p>
@@ -87,6 +74,27 @@ export default function documents() {
               Help
             </p>
           </div>
+      <header className="flex justify-between items-center text-sm p-3">
+        
+        <span onClick={() => router.push("/")} className="cursor-pointer">
+          <Image
+            src="https://res.cloudinary.com/evergreenx/image/upload/v1641397142/wordium_docs-removebg-preview_nloamh.png"
+            width={70}
+            height={70}
+            className="cursor-pointer"
+          />
+          {/* <Image src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Google_Docs.max-1100x1100.png" /> */}
+        </span>
+
+        <div className="flex-grow">
+          <h2 className="font-semibold text-lg mx-2">
+            {snapshot?.data()?.filename}
+          </h2>
+          {/* <Icon name="star" size="1xl"  color={'grey'} />
+          <Icon name="folderzip" size="1xl"  color={'grey'} />
+          <Icon name="cloud" size="1xl"  color={'grey'} /> */}
+
+       
         </div>
 
         <Button className="bg-blue-700  h-10 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded">

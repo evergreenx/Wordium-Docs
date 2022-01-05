@@ -12,7 +12,7 @@ export default function Login() {
   return (
     <div className="mx-auto w-full justify-center items-center flex flex-col ">
       <Image
-        src={"https://links.papareact.com/1ui"}
+        src={"https://res.cloudinary.com/evergreenx/image/upload/v1641374992/crypto_ark_1_tzwqvl.png"}
         width={"300"}
         height={"400"}
         objectFit="contain"
