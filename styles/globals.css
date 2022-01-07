@@ -23,3 +23,7 @@
 .DraftEditor-root {
   /* height: 480px !important; */
 }
+
+.border {
+  border-width: 0;
+}

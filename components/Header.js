@@ -44,7 +44,7 @@ export default function Header() {
             rounded={true}
             iconOnly={true}
             ripple="dark"
-            className="border-0 border-blue-500"
+            className="
           >
             <Icon name={"menu"} size={"2xl"} />
           </Button>
