@@ -4,7 +4,7 @@ import Icon from "@material-tailwind/react/Icon";
 import Image from "next/image";
 import Box from "@mui/material/Box";
 import firebase from "firebase";
-import {useCollectionOnce } from 'react-firebase-hooks/firestore';
+import { useCollectionOnce } from "react-firebase-hooks/firestore";
 
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
