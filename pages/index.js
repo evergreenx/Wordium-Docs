@@ -11,7 +11,6 @@ import ModalBody from "@material-tailwind/react/ModalBody";
 import ModalFooter from "@material-tailwind/react/ModalFooter";
 import Button from "@material-tailwind/react/Button";
 
-
 import Login from "../components/Login";
 
 export default function Home() {
@@ -32,7 +31,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen py-2">
       <Head>
-        <title>Welocome to word processor</title>
+        <title>Welocome to wordium docs</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
