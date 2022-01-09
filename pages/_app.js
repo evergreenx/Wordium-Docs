@@ -1,7 +1,6 @@
-
 import "@material-tailwind/react/tailwind.css";
 import "../styles/globals.css";
- Head from "next/head";
+import Head from "next/head";
 // import  SessionProvider  from "next-auth/client";
 import { Provider } from "next-auth/client";
 
