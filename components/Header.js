@@ -3,7 +3,7 @@ import React, { useState } from "react";
 <Icon name={"menu"} size={"2xl"} />;
 import Icon from "@material-tailwind/react/Icon";
 import Button from "@material-tailwind/react/Button";
-import Link from 'next/link'
+import Link from "next/link";
 
 import Image from "next/image";
 import { getProviders, providers } from "next-auth/client";
@@ -49,17 +49,17 @@ export default function Header() {
             <Icon name={"menu"} size={"2xl"} />
           </Button>
 
-<Link href="/">
-          <Image
-            src="https://res.cloudinary.com/evergreenx/image/upload/v1641396581/crypto_ark_uqjfic.svg"
-            width={80}
-            height={80}
-          />
-</Link>
+          <Link href="/">
+            <Image
+              src="https://res.cloudinary.com/evergreenx/image/upload/v1641396581/crypto_ark_uqjfic.svg"
+              width={80}
+              height={80}
+            />
+          </Link>
           <h2 className="text-2xl text-gray-500 mr-5 ml-3 md:mr-16">WDocs</h2>
         </div>
 
-        <div className="searchbar w-1/3  invisible md:visible  self-center   h-12 flex items-center  px-4 py-5 mx-5 md:mx-20 bg-gray-100 rounded-lg focus-within:bg-white focus-within:border-1 focus-within:shadow-md focus-within:text-gray-600">
+        <div className="searchbar w-1/3  hidden md:visible  self-center   h-12  items-center  px-4 py-5 mx-5 md:mx-20 bg-gray-100 rounded-lg focus-within:bg-white focus-within:border-1 focus-within:shadow-md focus-within:text-gray-600">
           <Button
             color="gray"
             buttonType="outline"
@@ -78,7 +78,7 @@ export default function Header() {
           />
         </div>
 
-        <div className="user-area flex items-center ">
+        <div className="user-area flex items-center  ">
           <Button
             color="gray"
             buttonType="outline"
@@ -86,14 +86,14 @@ export default function Header() {
             rounded={true}
             iconOnly={true}
             ripple="dark"
-            className="border-0 ml-5 mr-5 md:ml-11 h-16"
+            className="border-0 ml-5 mr-5 md:ml-11 h-16 hidden md:visible "
           >
             <Icon name={"apps"} size={"3xl"} />
           </Button>
 
           <img
             loading="lazy"
-            className="inline cursor-pointer object-cover w-8 h-8  rounded-full"
+            className=" cursor-pointer object-cover w-8 h-8  rounded-full"
             src={session?.user?.image}
             alt="Profile image"
             id="basic-button"

@@ -29,7 +29,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen py-2">
+    <div className="flex flex-col min-h-screen py-2  ">
       <Head>
         <title>Welocome to wordium docs</title>
         <link rel="icon" href="/favicon.ico" />
@@ -44,7 +44,7 @@ export default function Home() {
       </section>
 
       <section className="pb-10 px-10 mt-5">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <ExisitingDocs />
         </div>
       </section>

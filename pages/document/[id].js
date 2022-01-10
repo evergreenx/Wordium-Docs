@@ -48,7 +48,7 @@ export default function documents() {
   console.log(snapshot, "two");
   return (
     <div>
-         <div className="flex-row flex items-center text-xs space-x-1 mx-1 ">
+         <div className="flex-row flex items-center text-xs mx-1 ">
             <p className="hover:bg-gray-100 cursor-pointer py-1 rounded px-3">
               File
             </p>
@@ -67,12 +67,10 @@ export default function documents() {
             <p className="hover:bg-gray-100 cursor-pointer py-1 px-3 rounded">
               Tools
             </p>
-            <p className="hover:bg-gray-100 cursor-pointer py-1 px-3 rounded">
+            <p className="hover:bg-gray-100 cursor-pointer py-1 px-3 rounded truncate">
               Add-ons
             </p>
-            <p className="hover:bg-gray-100 cursor-pointer py-1 px-3 rounded">
-              Help
-            </p>
+         
           </div>
       <header className="flex justify-between items-center text-sm p-3">
         

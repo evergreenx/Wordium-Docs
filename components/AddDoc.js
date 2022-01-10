@@ -135,7 +135,7 @@ export default function AddDoc() {
       <div>
         <div className="relative h-52 w-40 border-2 border-slate-100 cursor-pointer hover:border-blue-700">
           <Image
-            src="https://links.papareact.com/pju"
+            src="https://res.cloudinary.com/evergreenx/image/upload/v1641832538/add_mfpm5z.png"
             layout="fill"
             onClick={handleOpen}
           />
