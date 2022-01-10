@@ -45,7 +45,7 @@ export default function documents() {
     router.push("/");
   }
 
-  console.log(snapshot, "two");
+  // console.log(snapshot, "two");
   return (
     <div>
          <div className="flex-row flex items-center text-xs mx-1 ">

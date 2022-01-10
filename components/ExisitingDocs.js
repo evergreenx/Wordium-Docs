@@ -17,7 +17,7 @@ export default function ExisitingDocs() {
       .orderBy("timestamp", "desc")
   );
 
-  console.log(snapshot, "two");
+  // console.log(snapshot, "two");
   return (
     <>
       <div className="">

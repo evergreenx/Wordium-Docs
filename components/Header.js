@@ -49,13 +49,12 @@ export default function Header() {
             <Icon name={"menu"} size={"2xl"} />
           </Button>
 
-          <Link href="/">
-            <Image
-              src="https://res.cloudinary.com/evergreenx/image/upload/v1641396581/crypto_ark_uqjfic.svg"
-              width={80}
-              height={80}
-            />
-          </Link>
+          <Image
+            src="https://res.cloudinary.com/evergreenx/image/upload/v1641396581/crypto_ark_uqjfic.svg"
+            width={80}
+            height={80}
+          />
+
           <h2 className="text-2xl text-gray-500 mr-5 ml-3 md:mr-16">WDocs</h2>
         </div>
 

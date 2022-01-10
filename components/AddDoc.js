@@ -3,7 +3,8 @@ import Button from "@material-tailwind/react/Button";
 import Icon from "@material-tailwind/react/Icon";
 import Image from "next/image";
 import Box from "@mui/material/Box";
-import firebase from "firebase";
+import firebase from "firebase/app";
+import 'firebase/firestore';
 import { useCollectionOnce } from "react-firebase-hooks/firestore";
 
 import Typography from "@mui/material/Typography";
@@ -137,6 +138,7 @@ export default function AddDoc() {
           <Image
             src="https://res.cloudinary.com/evergreenx/image/upload/v1641832538/add_mfpm5z.png"
             layout="fill"
+            priority={true}
             onClick={handleOpen}
           />
         </div>
