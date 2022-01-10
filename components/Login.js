@@ -20,7 +20,7 @@ export default function Login() {
       {/* <Button>Login</Button> */}
 
       <Button
-        color="red"
+        color="orange"
         buttonType="filled"
         size="large"
         rounded={false}
