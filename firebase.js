@@ -3,6 +3,7 @@
 
 import firebase from "firebase/app";
 import "firebase/firestore";
+import 'firebase/analytics';
 // import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -26,7 +27,10 @@ const app = !firebase.apps.length
   ? firebase.initializeApp(firebaseConfig)
   : firebase.app();
 
+
+app.analytics()
 const db = app.firestore();
+
 
 // : firebase.app();
 // const analytics = getAnalytics(app);
