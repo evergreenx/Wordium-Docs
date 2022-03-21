@@ -1,5 +1,5 @@
 import React from "react";
-import { useDocument } from "react-firebase-hooks/firestore";
+import { useDocumentOnce } from "react-firebase-hooks/firestore";
 import { db } from "../../firebase";
 import { useSession, getSession } from "next-auth/client";
 import Icon from "@material-tailwind/react/Icon";

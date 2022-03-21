@@ -37,7 +37,7 @@ export default function documents() {
     // handleClose()
     signOut();
   };
-  const [snapshot, loadingSnapshot] = useDocument(
+  const [snapshot, loadingSnapshot] = useDocuments(
     db.collection("userDocs").doc(session.user.email).collection("docs").doc(id)
   );
 
