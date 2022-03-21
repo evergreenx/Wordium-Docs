@@ -32,7 +32,7 @@ const firebaseConfig = {
 
 
 // app.analytics()
-const db = firebase.firestore();
+const db = app.firestore();
 
 
 // : firebase.app();
@@ -40,7 +40,7 @@ const db = firebase.firestore();
 
 // const analytics = firebase.analytics();
 
-// app.analytics();
+app.analytics();
 // app.analytics();
 
 export { db };

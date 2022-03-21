@@ -23,24 +23,20 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-
-
-  if (typeof window !== 'undefined' && !firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-  }
+const app = !firebase.apps.length
+  ? firebase.initializeApp(firebaseConfig)
+  : firebase.app();
 
 
 // app.analytics()
-const db = firebase.firestore();
+const db = app.firestore();
 
 
 // : firebase.app();
 // const analytics = getAnalytics(app);
 
 // const analytics = firebase.analytics();
-
-// app.analytics();
+const analytics = getAnalytics();
 // app.analytics();
 
 export { db };

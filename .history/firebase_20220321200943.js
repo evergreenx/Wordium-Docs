@@ -40,7 +40,7 @@ const db = firebase.firestore();
 
 // const analytics = firebase.analytics();
 
-// app.analytics();
+app.analytics();
 // app.analytics();
 
 export { db };
