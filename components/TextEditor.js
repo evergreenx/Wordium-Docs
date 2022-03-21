@@ -22,16 +22,16 @@ export default function TextEditor() {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
   let count = editorState.length;
-  // console.log(count);
+
 
   const router = useRouter();
 
   const { id } = router.query;
-  // console.log(editorState, "editorState");
+
   const [snapshot, loadingSnapshot] = useDocumentOnce(
     db.collection("userDocs").doc(session.user.email).collection("docs").doc(id)
   );
-  // console.log(snapshot, "two");
+
 
   useEffect(() => {
     if (snapshot?.data()?.editorState)
@@ -43,8 +43,7 @@ export default function TextEditor() {
   }, [snapshot]);
 
   let data = convertToRaw(editorState.getCurrentContent());
-  // console.log(data, "data");
-
+  
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState);
 

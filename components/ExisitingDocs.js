@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useCollectionOnce } from "react-firebase-hooks/firestore";
+import { useCollection } from "react-firebase-hooks/firestore";
 import { db } from "../firebase";
 import { useSession } from "next-auth/client";
 import "firebase/firestore";
@@ -9,7 +9,7 @@ import Loader from "./Loader";
 export default function ExisitingDocs() {
   const [session] = useSession();
 
-  const [snapshot, loading] = useCollectionOnce(
+  const [snapshot, loading] = useCollection(
     db
       .collection("userDocs")
       .doc(session.user.email)
@@ -17,7 +17,6 @@ export default function ExisitingDocs() {
       .orderBy("timestamp", "desc")
   );
 
-  // console.log(snapshot, "two");
   return (
     <>
       <div className="">
@@ -60,8 +59,6 @@ export default function ExisitingDocs() {
               date={doc.data().timestamp}
             />
           ))}
-
-         
         </div>
       </div>
     </>

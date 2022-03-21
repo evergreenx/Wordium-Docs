@@ -4,7 +4,7 @@ import Icon from "@material-tailwind/react/Icon";
 import Image from "next/image";
 import Box from "@mui/material/Box";
 import firebase from "firebase/app";
-import 'firebase/firestore';
+import "firebase/firestore";
 import { useCollectionOnce } from "react-firebase-hooks/firestore";
 
 import Typography from "@mui/material/Typography";
@@ -42,10 +42,14 @@ export default function AddDoc() {
     }
     // alert(docName);
 
-    db.collection("userDocs").doc(session.user.email).collection("docs").add({
-      filename: docName,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    });
+    const fetch = db
+      .collection("userDocs")
+      .doc(session.user.email)
+      .collection("docs")
+      .add({
+        filename: docName,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      });
 
     setDocName("");
     handleClose();
@@ -70,7 +74,6 @@ export default function AddDoc() {
             if (e.key === "Enter") createDocument();
           }}
         />
-
 
         <div className="mt-10 flex ">
           <Button
@@ -147,9 +150,8 @@ export default function AddDoc() {
       </div>
 
       <span className="text-xs text-gray-400 ml-2">
-          press F5 to see the changes in the document
-        </span>
-
+        press F5 to see the changes in the document
+      </span>
 
       {modal}
     </>
