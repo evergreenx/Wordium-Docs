@@ -20,7 +20,11 @@ export default function Home() {
         <title>Welcome to wordium docs</title>
         <link rel="icon" href="/favicon.ico" />
 
-
+        <link rel='shortcut icon' type='image/vnd.microsoft.icon' href='/favicon.ico'> <!-- IE -->
+<link rel='apple-touch-icon' type='image/png' href='/icon.57.png'> <!-- iPhone -->
+<link rel='apple-touch-icon' type='image/png' sizes='72x72' href='/icon.72.png'> <!-- iPad -->
+<link rel='apple-touch-icon' type='image/png' sizes='114x114' href='/icon.114.png'> <!-- iPhone4 -->
+<link rel='icon' type='image/png' href='/icon.114.png'></link>
       </Head>
 
       <Header />

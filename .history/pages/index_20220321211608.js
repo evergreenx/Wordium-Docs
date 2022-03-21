@@ -19,8 +19,6 @@ export default function Home() {
       <Head>
         <title>Welcome to wordium docs</title>
         <link rel="icon" href="/favicon.ico" />
-
-
       </Head>
 
       <Header />
