@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Head from "next/head";
 import AddDoc from "../components/AddDoc";
 import ExisitingDocs from "../components/ExisitingDocs";

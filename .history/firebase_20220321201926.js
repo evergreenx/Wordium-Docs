@@ -38,7 +38,7 @@ const db = app.firestore();
 
 // const analytics = firebase.analytics();
 
-// app.analytics();
+app.analytics();
 // app.analytics();
 
 export { db };

@@ -7,9 +7,6 @@ import { hotjar } from "react-hotjar";
 
 
 function MyApp({ Component, pageProps }) {
- 
-hotjar.initialize(2886377, 6);
- 
   return (
     <>
       <Head>

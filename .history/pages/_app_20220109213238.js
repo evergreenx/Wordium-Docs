@@ -3,13 +3,8 @@ import "../styles/globals.css";
 import Head from "next/head";
 // import  SessionProvider  from "next-auth/client";
 import { Provider } from "next-auth/client";
-import { hotjar } from "react-hotjar";
-
 
 function MyApp({ Component, pageProps }) {
- 
-hotjar.initialize(2886377, 6);
- 
   return (
     <>
       <Head>

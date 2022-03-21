@@ -5,11 +5,9 @@ import Head from "next/head";
 import { Provider } from "next-auth/client";
 import { hotjar } from "react-hotjar";
 
+// hotjar.initialize(2886377, 6);
 
 function MyApp({ Component, pageProps }) {
- 
-hotjar.initialize(2886377, 6);
- 
   return (
     <>
       <Head>

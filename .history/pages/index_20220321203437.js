@@ -1,9 +1,15 @@
+import React, { useState } from "react";
 import Head from "next/head";
 import AddDoc from "../components/AddDoc";
 import ExisitingDocs from "../components/ExisitingDocs";
 import Header from "../components/Header";
+// import getsession and usesession
 import { useSession, getSession } from "next-auth/client";
-
+import Modal from "@material-tailwind/react/Modal";
+import ModalHeader from "@material-tailwind/react/ModalHeader";
+import ModalBody from "@material-tailwind/react/ModalBody";
+import ModalFooter from "@material-tailwind/react/ModalFooter";
+import Button from "@material-tailwind/react/Button";
 
 import Login from "../components/Login";
 
