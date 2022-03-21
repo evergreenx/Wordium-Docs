@@ -21,9 +21,6 @@ export default function ExisitingDocs() {
     <>
       <div className="">
         <div className="mt-6">
-          {/* {loading && <span>Collection: Loading...</span>} */}
-
-          {/* spinner loader  */}
           {loading && <Loader />}
 
           {snapshot?.docs?.length > 0 ? (

@@ -12,35 +12,34 @@ import Modal from "@mui/material/Modal";
 import Input from "@material-tailwind/react/Input";
 import { db } from "../firebase";
 import { useSession } from "next-auth/client";
-// import Button from "@material-tailwind/react/Button";
+
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: 300,
   bgcolor: "background.paper",
   border: 0,
   boxShadow: 24,
   borderRadius: 4,
-  p: 4,
+  padding: 4,
+  mx:0.5
 };
 
 export default function AddDoc() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
   const [docName, setDocName] = useState("");
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   const [session, loading] = useSession();
 
-  // const [snapshot] = useCollectionOnce(db.collection('userDocs').doc(session.user.email).collection('docs').orderBy('timestamp', 'desc'));
-
   const createDocument = () => {
     if (!docName) {
       return;
     }
-    // alert(docName);
+
 
     const fetch = db
       .collection("userDocs")
@@ -62,7 +61,9 @@ export default function AddDoc() {
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-      <Box sx={style}>
+      <Box sx={style} 
+      
+      >
         <Input
           type="text"
           color="lightBlue"
@@ -75,11 +76,10 @@ export default function AddDoc() {
           }}
         />
 
-        <div className="mt-10 flex ">
+        <div className="mt-10 flex space-x-4 ">
           <Button
             sx={{ mx: 6 }}
-            className="mr-6"
-            buttonType="outline"
+         className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             onClick={handleClose}
           >
             Cancel{" "}
