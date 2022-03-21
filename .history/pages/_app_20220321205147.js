@@ -1,4 +1,4 @@
-import { useEffect} from "react";
+import 
 import "@material-tailwind/react/tailwind.css";
 import "../styles/globals.css";
 import Head from "next/head";
