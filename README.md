@@ -17,7 +17,7 @@ Wordium docs
 - [License](#license)
 
 ## About The App
-[wordium docs] is a word processor application that provides for input, editing, formatting, and output of text, with some additional features....
+Wordium docs is a word processor application that provides for input, editing, formatting, and output of text, with some additional features....
 
 ## Screenshots
 
