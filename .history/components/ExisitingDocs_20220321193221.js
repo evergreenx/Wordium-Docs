@@ -41,10 +41,10 @@ export default function ExisitingDocs() {
           ) : (
             <div className="mt-6 text-center">
               <h2 className="text-gray-700 text-xl text-center font-normal ">
-                you have no documents
+                you have no Documents
               </h2>
               <span className="text-gray-500 text-sm text-center font-normal ">
-                Create a document to get started.
+                Create a document to get started
               </span>
             </div>
           )}

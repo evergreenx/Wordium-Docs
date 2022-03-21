@@ -150,7 +150,9 @@ export default function AddDoc() {
         <p className="text-sm ml-2 font-semibold  mt-2 text-gray-700">Blank</p>
       </div>
 
-  
+      <span className="text-xs text-gray-400 ml-2">
+        press F5 to see the changes in the document
+      </span>
 
       {modal}
     </>

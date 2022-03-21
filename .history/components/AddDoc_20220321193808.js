@@ -74,20 +74,20 @@ export default function AddDoc() {
         />
 
         <div className="mt-10 flex space-x-4 ">
-          <button
+          <Button
             sx={{ mx: 6 }}
-            className="text-gray-800 bg-gray-300 capitalize hover:bg-gray-400 text-sm rounded-xl font-bold  p-3 "
+            className="text-white bg-gray-300 capitalize "
             onClick={handleClose}
           >
             Cancel{" "}
-          </button>
-          <button
+          </Button>
+          <Button
             sx={{ mt: 6 }}
-            className="bg-yellow-500 capitalize hover:bg-yellow-400 text-sm rounded-xl font-bold text-white p-3 "
+            className="bg-yellow-500 capitalize "
             onClick={createDocument}
           >
             Create{" "}
-          </button>
+          </Button>
         </div>
       </Box>
     </Modal>
@@ -150,7 +150,9 @@ export default function AddDoc() {
         <p className="text-sm ml-2 font-semibold  mt-2 text-gray-700">Blank</p>
       </div>
 
-  
+      <span className="text-xs text-gray-400 ml-2">
+        press F5 to see the changes in the document
+      </span>
 
       {modal}
     </>

@@ -4,7 +4,7 @@ import Icon from "@material-tailwind/react/Icon";
 import Image from "next/image";
 import Box from "@mui/material/Box";
 import firebase from "firebase/app";
-import "firebase/firestore";
+import 'firebase/firestore';
 import { useCollectionOnce } from "react-firebase-hooks/firestore";
 
 import Typography from "@mui/material/Typography";
@@ -12,19 +12,18 @@ import Modal from "@mui/material/Modal";
 import Input from "@material-tailwind/react/Input";
 import { db } from "../firebase";
 import { useSession } from "next-auth/client";
-
+// import Button from "@material-tailwind/react/Button";
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 300,
+  width: 400,
   bgcolor: "background.paper",
   border: 0,
   boxShadow: 24,
   borderRadius: 4,
-  padding: 4,
-  mx: 0.5,
+  p: 4,
 };
 
 export default function AddDoc() {
@@ -35,19 +34,18 @@ export default function AddDoc() {
 
   const [session, loading] = useSession();
 
+  // const [snapshot] = useCollectionOnce(db.collection('userDocs').doc(session.user.email).collection('docs').orderBy('timestamp', 'desc'));
+
   const createDocument = () => {
     if (!docName) {
       return;
     }
+    // alert(docName);
 
-    const fetch = db
-      .collection("userDocs")
-      .doc(session.user.email)
-      .collection("docs")
-      .add({
-        filename: docName,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      });
+    db.collection("userDocs").doc(session.user.email).collection("docs").add({
+      filename: docName,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
 
     setDocName("");
     handleClose();
@@ -73,21 +71,19 @@ export default function AddDoc() {
           }}
         />
 
-        <div className="mt-10 flex space-x-4 ">
-          <button
+
+        <div className="mt-10 flex ">
+          <Button
             sx={{ mx: 6 }}
-            className="text-gray-800 bg-gray-300 capitalize hover:bg-gray-400 text-sm rounded-xl font-bold  p-3 "
+            className="mr-6"
+            buttonType="outline"
             onClick={handleClose}
           >
             Cancel{" "}
-          </button>
-          <button
-            sx={{ mt: 6 }}
-            className="bg-yellow-500 capitalize hover:bg-yellow-400 text-sm rounded-xl font-bold text-white p-3 "
-            onClick={createDocument}
-          >
+          </Button>
+          <Button sx={{ mt: 6 }} onClick={createDocument}>
             Create{" "}
-          </button>
+          </Button>
         </div>
       </Box>
     </Modal>
@@ -150,7 +146,10 @@ export default function AddDoc() {
         <p className="text-sm ml-2 font-semibold  mt-2 text-gray-700">Blank</p>
       </div>
 
-  
+      <span className="text-xs text-gray-400 ml-2">
+          press F5 to see the changes in the document
+        </span>
+
 
       {modal}
     </>

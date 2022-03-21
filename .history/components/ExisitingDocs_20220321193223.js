@@ -44,7 +44,7 @@ export default function ExisitingDocs() {
                 you have no documents
               </h2>
               <span className="text-gray-500 text-sm text-center font-normal ">
-                Create a document to get started.
+                Create a document to get started
               </span>
             </div>
           )}

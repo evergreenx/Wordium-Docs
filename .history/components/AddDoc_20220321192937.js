@@ -24,11 +24,11 @@ const style = {
   boxShadow: 24,
   borderRadius: 4,
   padding: 4,
-  mx: 0.5,
+  mx:0.5
 };
 
 export default function AddDoc() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
   const [docName, setDocName] = useState("");
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -39,6 +39,7 @@ export default function AddDoc() {
     if (!docName) {
       return;
     }
+
 
     const fetch = db
       .collection("userDocs")
@@ -60,7 +61,9 @@ export default function AddDoc() {
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-      <Box sx={style}>
+      <Box sx={style} 
+      
+      >
         <Input
           type="text"
           color="lightBlue"
@@ -74,20 +77,19 @@ export default function AddDoc() {
         />
 
         <div className="mt-10 flex space-x-4 ">
-          <button
+          <Button
             sx={{ mx: 6 }}
-            className="text-gray-800 bg-gray-300 capitalize hover:bg-gray-400 text-sm rounded-xl font-bold  p-3 "
+         className="text-yellow-500 bg-transparent "
             onClick={handleClose}
           >
             Cancel{" "}
-          </button>
-          <button
-            sx={{ mt: 6 }}
-            className="bg-yellow-500 capitalize hover:bg-yellow-400 text-sm rounded-xl font-bold text-white p-3 "
-            onClick={createDocument}
-          >
+          </Button>
+          <Button sx={{ mt: 6 }} 
+          className="bg-yellow-500 capitalize "
+          
+          onClick={createDocument}>
             Create{" "}
-          </button>
+          </Button>
         </div>
       </Box>
     </Modal>
@@ -150,7 +152,9 @@ export default function AddDoc() {
         <p className="text-sm ml-2 font-semibold  mt-2 text-gray-700">Blank</p>
       </div>
 
-  
+      <span className="text-xs text-gray-400 ml-2">
+        press F5 to see the changes in the document
+      </span>
 
       {modal}
     </>
