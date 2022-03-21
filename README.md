@@ -1,27 +1,47 @@
-# Next.js + Tailwind CSS Example
+# Project Title
+Wordium docs
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+## Demo link:
+[link](https://wordiumdocs.netlify.app/)
 
-## Preview
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+## Table of Content:
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+- [About The App](#about-the-app)
+- [Screenshots](#screenshots)
+- [Technologies](#technologies)
+- [Setup](#setup)
+- [Approach](#approach)
+- [Status](#status)
+- [Credits](#credits)
+- [License](#license)
 
-## Deploy your own
+## About The App
+[wordium docs] is a word processor application that provides for input, editing, formatting, and output of text, with some additional features....
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+## Screenshots
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+![Writing](https://res.cloudinary.com/evergreenx/image/upload/v1644680734/project_1_dgnqd3.png)
 
-## How to use
+## Technologies
+I used `react`, `nextjs`, `firebase firestore` for database , `draft js` for text editor , `next-auth` for user authentication and `tailwindcss` for styling.
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+## Setup
+- download or clone the repository
+- run `npm install`
+- get your GOOGLE_CLIENT_ID  and GOOGLE_CLIENT_SECRET variables  from [Google Developers Console](https://console.cloud.google.com/apis)
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+## Approach
+I adopted the `reuseable` based style for my react components to build encapsulated components that manage their own state then compose them to make complex UIs. 
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+## Status
+wordium docs is still in progress. `Version 2` will be out soon.
+
+## Credits
+List of contriubutors:
+- [Ido Evergreen](idoevergreen.tech)
+
+
+## License
+
+MIT license @ [author](author.com)
