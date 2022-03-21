@@ -44,4 +44,4 @@ List of contriubutors:
 
 ## License
 
-MIT license @ [author](author.com)
+MIT license @ [author](idoevergreen.com)
