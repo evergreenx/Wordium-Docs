@@ -1,12 +1,12 @@
 import React from "react";
 import { useDocument } from "react-firebase-hooks/firestore";
 import { db } from "../../firebase";
-import { useSession, getSession } from "next-auth/client";
+import { useSession, getSession } from "next-auth/react";
 import Icon from "@material-tailwind/react/Icon";
 // import DocumentRow from "./DocumentRow";
 import Login from "../../components/Login";
 import { useRouter } from "next/dist/client/router";
-import { signOut } from "next-auth/client";
+import { signOut } from "next-auth/react";
 
 import Button from "@material-tailwind/react/Button";
 import Menu from "@mui/material/Menu";
