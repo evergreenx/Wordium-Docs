@@ -11,7 +11,7 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Input from "@material-tailwind/react/Input";
 import { db } from "../firebase";
-import { useSession } from "next-auth/client";
+import { useSession } from "next-auth/react";
 
 const style = {
   position: "absolute",

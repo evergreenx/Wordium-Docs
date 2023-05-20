@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { db } from "../firebase";
-import { useSession } from "next-auth/client";
+import { useSession } from "next-auth/react";
 import "firebase/firestore";
 import Icon from "@material-tailwind/react/Icon";
 import DocumentRow from "./DocumentRow";

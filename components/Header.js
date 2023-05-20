@@ -6,14 +6,14 @@ import Button from "@material-tailwind/react/Button";
 import Link from "next/link";
 
 import Image from "next/image";
-import { getProviders, providers } from "next-auth/client";
+import { getProviders, providers } from "next-auth/react";
 // import Input from "@material-tailwind/react/Input";
 
 // import sigout
 
-import { signOut } from "next-auth/client";
+import { signOut } from "next-auth/react";
 
-import { useSession } from "next-auth/client";
+import { useSession } from "next-auth/react";
 // import Button from '@mui/material/Button';
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";

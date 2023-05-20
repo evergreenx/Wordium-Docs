@@ -2,7 +2,7 @@ import Head from "next/head";
 import AddDoc from "../components/AddDoc";
 import ExisitingDocs from "../components/ExisitingDocs";
 import Header from "../components/Header";
-import { useSession, getSession } from "next-auth/client";
+import { useSession, getSession } from "next-auth/react";
 
 
 import Login from "../components/Login";

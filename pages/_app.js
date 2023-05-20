@@ -3,7 +3,7 @@ import "@material-tailwind/react/tailwind.css";
 import "../styles/globals.css";
 import Head from "next/head";
 // import  SessionProvider  from "next-auth/client";
-import { Provider } from "next-auth/client";
+import { Provider } from "next-auth/react";
 import { hotjar } from "react-hotjar";
 
 function MyApp({ Component, pageProps }) {

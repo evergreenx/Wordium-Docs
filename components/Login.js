@@ -1,7 +1,7 @@
 import React from "react";
 // import  Button  from "@material-tailwind/react";
 import Image from "next/image";
-import { signIn } from "next-auth/client";
+import { signIn } from "next-auth/react";
 import Button from "@material-tailwind/react/Button";
 import Icon from "@material-tailwind/react/Icon";
 
