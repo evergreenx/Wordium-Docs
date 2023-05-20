@@ -4,7 +4,7 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import dynamic from "next/dynamic";
 import { EditorState } from "draft-js";
 import { db } from "../firebase";
-import { useSession } from "next-auth/client";
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useDocumentOnce } from "react-firebase-hooks/firestore";
 import { convertToRaw, convertFromRaw } from "draft-js";
