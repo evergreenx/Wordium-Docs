@@ -8,7 +8,7 @@ import { useSession, getSession } from "next-auth/react";
 import Login from "../components/Login";
 
 export default function Home() {
-  const [session] = useSession();
+  const { data: session } = useSession()
 
   if (!session) {
     return <Login />;

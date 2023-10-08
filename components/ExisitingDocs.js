@@ -7,15 +7,23 @@ import Icon from "@material-tailwind/react/Icon";
 import DocumentRow from "./DocumentRow";
 import Loader from "./Loader";
 export default function ExisitingDocs() {
-  const [session] = useSession();
+
+  
+  const { data: session } = useSession()
+
+  
+
+  
 
   const [snapshot, loading] = useCollection(
     db
       .collection("userDocs")
-      .doc(session.user.email)
+      .doc(session?.user.email)
       .collection("docs")
       .orderBy("timestamp", "desc")
   );
+
+
 
   return (
     <>

@@ -15,7 +15,7 @@ import TextEditor from "../../components/TextEditor";
 import Image from "next/image";
 
 export default function documents() {
-  const [session] = useSession();
+  const { data: session } = useSession()
 
   if (!session) {
     return <Login />;

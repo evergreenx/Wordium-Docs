@@ -26,7 +26,7 @@ export default function Login() {
         rounded={false}
         iconOnly={false}
         ripple="dark"
-        className="border-0"
+
         onClick={handleSignIn}
         className="border-0 border-blue-500 w-32"
       >

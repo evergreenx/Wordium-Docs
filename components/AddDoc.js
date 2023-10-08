@@ -33,7 +33,10 @@ export default function AddDoc() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const [session, loading] = useSession();
+  
+
+  const { data: session } = useSession()
+
 
   const createDocument = () => {
     if (!docName) {

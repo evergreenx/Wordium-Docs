@@ -17,7 +17,7 @@ const Editor = dynamic(
 );
 
 export default function TextEditor() {
-  const [session] = useSession();
+  const { data: session } = useSession()
 
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
 

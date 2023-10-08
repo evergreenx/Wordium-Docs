@@ -19,7 +19,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 
 export default function Header() {
-  const [session, loading] = useSession();
+  const { data: session } = useSession()
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -33,6 +33,9 @@ export default function Header() {
     // handleClose()
     signOut();
   };
+
+
+  console.log(session)
   return (
     <>
       <div className="flex sticky top-0 z-50 px-4 py-2 justify-between items-center shadow-md bg-white">
