@@ -13,6 +13,6 @@ export default NextAuth({
       clientSecret: 'p9yL4VP63PcdF_HiGqOryoNB',
     }),
   ],
-
+ secret: 'secret'
   // adapter: FirestoreAdapter(db),
 });
