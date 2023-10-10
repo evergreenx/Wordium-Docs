@@ -2,7 +2,7 @@
 Wordium docs
 
 ## Demo link:
-[link](https://wordiumdocs.netlify.app/)
+[link](https://wordium-docs.vercel.app/)
 
 
 ## Table of Content:
